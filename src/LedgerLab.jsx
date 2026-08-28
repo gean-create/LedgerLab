@@ -2939,14 +2939,49 @@ const LESSONS = [
     quiz: { q: "Your book balance is $12,450 and the bank statement shows $12,325. What should you do first?", options: ["Assume the bank made an error and ignore it", "Look for uncleared or missing transactions that explain the $125 gap", "Adjust the book balance to match without investigating"], correct: 1, explain: "A reconciliation difference always has a cause — an outstanding check, a bank fee not yet recorded, a duplicate entry, or a wrong amount. Investigate before adjusting anything." },
   },
   {
+    id: "accounts-receivable", title: "9. Managing accounts receivable",
+    body: "Accounts Receivable is everything customers currently owe the business. Managing it well means tracking due dates and following up before — not long after — an invoice goes overdue. Say an invoice is dated June 5, 2026 with 30-day terms: its due date is July 5, 2026. If it's still unpaid on July 6, it's officially overdue, and most VAs would send a friendly reminder within a few days of that date rather than waiting weeks. An AR Aging report groups unpaid invoices into Current, 1–30, 31–60, 61–90, and 90+ days overdue, which is how you decide who to follow up with first.",
+    quiz: { q: "An invoice was issued on June 5, 2026 with 30-day payment terms. If today is July 20, 2026 and it's still unpaid, which AR Aging bucket does it fall into?", options: ["Current", "1–30 days overdue", "31–60 days overdue"], correct: 1, explain: "The invoice was due July 5, 2026. July 20 is 15 days past that due date, which lands in the 1–30 days overdue bucket." },
+  },
+  {
     id: "accounts-payable", title: "10. Managing accounts payable",
     body: "Accounts Payable is everything the business currently owes its vendors. Managing it well means knowing what's due and when, so nothing gets paid late (which can damage vendor relationships or trigger fees) and nothing gets paid twice. An AP Aging report — grouping unpaid bills into Current, 1–30, 31–60, 61–90, and 90+ days overdue — is the standard tool for deciding what to pay first.",
     quiz: { q: "Looking at an AP Aging report, which bills usually deserve attention first?", options: ["The newest bills, since they're freshest", "The largest bills regardless of age", "The oldest overdue bills, since they've been outstanding longest"], correct: 2, explain: "Bills that have aged furthest past their due date are the most urgent — they're most likely to already be overdue with a vendor and are more likely to escalate to fees or a damaged relationship the longer they sit." },
   },
   {
+    id: "profit-loss", title: "11. Reading a Profit & Loss report",
+    body: "A Profit & Loss (P&L), also called an Income Statement, shows performance over a period of time — for example, the month of June 2026 (June 1 to June 30, 2026), or a full fiscal year (January 1 to December 31, 2026). It starts with revenue, subtracts expenses, and lands on net profit. Unlike a Balance Sheet, a P&L always needs a date range, not a single date, because it's measuring activity, not a snapshot.",
+    quiz: { q: "A client asks for \"the P&L for June.\" What date range are you actually running the report for?", options: ["June 1, 2026 through June 30, 2026", "A single date: June 30, 2026", "The entire year to date"], correct: 0, explain: "A P&L always covers a period, not a single day. \"For June\" means the full month — June 1 through June 30 — not one snapshot date." },
+  },
+  {
+    id: "balance-sheet", title: "12. Reading a Balance Sheet",
+    body: "A Balance Sheet is a snapshot as of one specific date — for example, \"as of June 30, 2026\" — showing everything the business owns (assets), owes (liabilities), and the owner's stake (equity) at that exact moment. This is the key difference from a P&L: a Balance Sheet answers \"what does the business look like right now,\" while a P&L answers \"how did the business perform over a stretch of time.\" The two connect through net profit, which flows from the P&L into equity on the Balance Sheet.",
+    quiz: { q: "A client asks for the Balance Sheet \"as of June 30, 2026.\" What does that date represent?", options: ["The first day of the reporting period", "A single point-in-time snapshot — the business's position at the end of that exact day", "The date the report was generated, which could be any time later"], correct: 1, explain: "A Balance Sheet is always tied to one specific date — it shows account balances as they stood at that exact moment, unlike a P&L which covers a range of dates." },
+  },
+  {
+    id: "cash-flow", title: "13. Reading a Cash Flow statement",
+    body: "A Cash Flow statement tracks actual cash moving in and out over a period (e.g. July 1–31, 2026), split into Operating (day-to-day business), Investing (buying/selling equipment or assets), and Financing (loans, owner contributions, drawings) activities. This is different from the P&L: a P&L can show a healthy profit for July even if the business is short on cash that month — for example, if a big invoice sent July 28 hasn't been paid yet, it counts as July income on the P&L but hasn't touched the bank account at all.",
+    quiz: { q: "A business shows $10,000 net profit on July's P&L, but its bank balance barely grew that month. What's the most likely explanation to check first?", options: ["The P&L must be wrong", "A meaningful amount of that profit is sitting in unpaid invoices (Accounts Receivable) rather than cash in the bank", "Cash Flow statements are always inaccurate"], correct: 1, explain: "Profit on the P&L is recorded when it's earned (accrual basis), not when cash actually arrives. Money tied up in unpaid invoices shows as profit but hasn't hit the bank — which is exactly why a Cash Flow statement exists alongside the P&L." },
+  },
+  {
     id: "month-end", title: "14. Month-end close",
     body: "Closing the month means every bank transaction is categorized, every invoice and bill reflects reality, the bank account is reconciled, and the reports (P&L, Balance Sheet, Trial Balance) are reviewed for anything that looks wrong before sharing them with the client.",
     quiz: { q: "Which of these should happen before you consider the month closed?", options: ["Only running the P&L report", "Categorizing all bank transactions and reconciling the bank account", "Deleting old invoices to keep things tidy"], correct: 1, explain: "A clean close requires every transaction categorized and the bank reconciled — reports are only as accurate as the data behind them." },
+  },
+  {
+    id: "va-bookkeeping", title: "15. Bookkeeping for Virtual Assistants",
+    body: "As a bookkeeping VA, you're usually working inside someone else's system on a recurring schedule — for example, every Monday you review the prior week's bank feed, and by the 5th of each month you close the previous month's books. Sticking to a predictable cadence is what makes a client trust you with their books: they should never have to ask \"is this done yet?\" A typical monthly cycle looks like: week 1–4, categorize transactions as they come in; by the 3rd of the following month, reconcile the bank; by the 5th, send the closed P&L and Balance Sheet.",
+    quiz: { q: "A new client doesn't specify a schedule. What's the best first step?", options: ["Wait until they ask for something", "Propose a concrete recurring cadence (e.g. \"I'll reconcile by the 3rd and send reports by the 5th of each month\") so expectations are clear from day one", "Do the bookkeeping whenever there's free time, with no fixed dates"], correct: 1, explain: "Clients trust VAs who set clear, dated expectations. A vague \"I'll get to it\" creates anxiety; a specific commitment (\"reconciled by the 3rd, reports by the 5th\") builds confidence and gives you an accountable deadline." },
+  },
+  {
+    id: "client-communication", title: "16. Client communication",
+    body: "Good bookkeeping communication is proactive, specific, and dated. Instead of \"some invoices are overdue,\" say \"three invoices are overdue as of today (July 20, 2026): two from June, one from May.\" Instead of \"I have a question,\" say exactly which transaction and what's unclear — a vague question forces the client to dig through their own records to understand what you're asking. Following up on your own outstanding questions after a few business days (rather than letting them sit for weeks) keeps the books from stalling.",
+    quiz: { q: "Which message is more useful to a client?", options: ["\"Some transactions need clarification when you get a chance.\"", "\"The $340 charge on July 12, 2026 from 'JS CONSULTING' — is this a subcontractor payment or a business expense? I need to know by Friday to close June's books on time.\"", "\"I have some questions about the books.\""], correct: 1, explain: "Specific transaction, specific date, specific ask, and a clear deadline. Vague messages create back-and-forth; specific ones get answered quickly because the client immediately knows what's needed and by when." },
+  },
+  {
+    id: "quality-control", title: "17. Bookkeeping quality control",
+    body: "Before sending any report to a client, run a quick self-check: does the Trial Balance actually balance? Does the Balance Sheet satisfy Assets = Liabilities + Equity? Is the bank reconciled as of the report date? Are there any transactions still sitting uncategorized? A simple pre-send checklist, done on the same date every month (e.g. always by the 5th), catches most errors before a client ever sees them — which is far better than a client catching the error themselves.",
+    quiz: { q: "It's July 5, 2026 and you're about to send June's reports to a client. What should you check first?", options: ["Whether the reports look visually neat", "Whether the Trial Balance balances and the bank is reconciled through June 30, 2026", "Whether the client will be happy with the numbers"], correct: 1, explain: "Quality control means verifying the numbers are structurally correct — a balanced Trial Balance and a bank reconciled through the period-end date — before anything else. A neat-looking report with a real error underneath is still wrong." },
   },
   {
     id: "common-mistakes", title: "18. Common bookkeeping mistakes",
@@ -2955,10 +2990,7 @@ const LESSONS = [
   },
 ];
 
-const UPCOMING_MODULES = [
-  "9. Accounts Receivable", "11. Profit & Loss", "12. Balance Sheet", "13. Cash Flow",
-  "15. Bookkeeping for Virtual Assistants", "16. Client Communication", "17. Bookkeeping Quality Control",
-];
+const UPCOMING_MODULES = [];
 
 function Learning({ data, setData }) {
   const progress = data.learningProgress || {};
@@ -2972,13 +3004,15 @@ function Learning({ data, setData }) {
       <div className="space-y-3">
         {LESSONS.map((l) => <LessonCard key={l.id} lesson={l} done={!!progress[l.id]} onComplete={() => markComplete(l.id)} />)}
       </div>
-      <Card className="p-4 mt-5">
-        <p className="text-sm font-medium text-slate-700 mb-2">Coming soon</p>
-        <p className="text-xs text-slate-500 mb-2">These modules from the full 18-module curriculum aren't built out yet — ask to have any of them added next.</p>
-        <div className="flex flex-wrap gap-1.5">
-          {UPCOMING_MODULES.map((m) => <Pill key={m}>{m}</Pill>)}
-        </div>
-      </Card>
+      {UPCOMING_MODULES.length > 0 && (
+        <Card className="p-4 mt-5">
+          <p className="text-sm font-medium text-slate-700 mb-2">Coming soon</p>
+          <p className="text-xs text-slate-500 mb-2">These modules from the full 18-module curriculum aren't built out yet — ask to have any of them added next.</p>
+          <div className="flex flex-wrap gap-1.5">
+            {UPCOMING_MODULES.map((m) => <Pill key={m}>{m}</Pill>)}
+          </div>
+        </Card>
+      )}
     </div>
   );
 }
